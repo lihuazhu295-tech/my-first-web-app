@@ -208,3 +208,96 @@ body::after {
     opacity: 0;
   }
 }
+
+/* 月亮挂件 */
+.moon-decoration {
+  position: fixed;
+  top: 60px;
+  right: 80px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff5e6, #ffd700);
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+  animation: moonGlow 3s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 月亮表面纹理 */
+.moon-decoration::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    12px 8px 0 -2px rgba(255, 255, 255, 0.2),
+    -5px 15px 0 -3px rgba(255, 255, 255, 0.15);
+}
+
+/* 月亮光晕 */
+.moon-decoration::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  animation: moonHalo 4s ease-in-out infinite alternate;
+}
+
+@keyframes moonGlow {
+  0% {
+    box-shadow:
+      0 0 20px rgba(255, 215, 0, 0.6),
+      0 0 40px rgba(255, 215, 0, 0.4),
+      inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow:
+      0 0 30px rgba(255, 215, 0, 0.8),
+      0 0 60px rgba(255, 215, 0, 0.6),
+      0 0 80px rgba(255, 215, 0, 0.3),
+      inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes moonHalo {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .moon-decoration {
+    top: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .moon-decoration::before {
+    top: 10px;
+    left: 12px;
+    width: 5px;
+    height: 5px;
+    box-shadow:
+      8px 5px 0 -1px rgba(255, 255, 255, 0.2),
+      -3px 10px 0 -2px rgba(255, 255, 255, 0.15);
+  }
+}
