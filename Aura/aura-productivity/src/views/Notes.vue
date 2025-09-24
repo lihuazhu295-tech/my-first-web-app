@@ -36,6 +36,9 @@
       </div>
     </div>
 
+    <!-- 音乐播放器卡片 -->
+    <MusicPlayerCard />
+
     <!-- 笔记内容区域 -->
     <div class="notes-content">
       <!-- 笔记列表 -->
@@ -131,6 +134,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import MusicPlayerCard from '@/components/MusicPlayerCard.vue'
 
 interface Note {
   id: string
