@@ -1,0 +1,9 @@
+{
+  "name": "my-first-web-app",
+  "version": "1.0.0",
+  "description": "My first web application",
+  "scripts": {
+    "build": "cd Aura/aura-productivity && node vercel-build-fix.cjs"
+  },
+  "private": true
+}
