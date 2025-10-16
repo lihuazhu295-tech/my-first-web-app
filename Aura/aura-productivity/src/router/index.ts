@@ -7,7 +7,6 @@ import Projects from '@/views/Projects.vue'
 import Calendar from '@/views/Calendar.vue'
 import Alarm from '@/views/Alarm.vue'
 import WaterReminder from '../views/WaterReminder.vue'
-import MusicPlayer from '@/views/MusicPlayer.vue'
 
 
 const routes: RouteRecordRaw[] = [
@@ -85,15 +84,6 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: '科学喝水',
       icon: 'Droplets'
-    }
-  },
-  {
-    path: '/music',
-    name: 'MusicPlayer',
-    component: MusicPlayer,
-    meta: {
-      title: '音乐播放',
-      icon: 'Music'
     }
   }
 ]

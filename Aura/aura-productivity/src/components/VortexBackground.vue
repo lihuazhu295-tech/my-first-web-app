@@ -1,7 +1,6 @@
 <template>
   <div class="vortex-container">
     <canvas ref="canvasRef" class="vortex-canvas"></canvas>
-    <div class="moon"></div>
     <div class="vortex-overlay"></div>
   </div>
 </template>
@@ -243,100 +242,6 @@ onUnmounted(() => {
       #292524 50%, 
       #44403c 75%, 
       #57534e 100%);
-  }
-}
-
-/* 月亮元素 */
-.moon {
-  position: absolute;
-  top: 15%;
-  right: 20%;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, 
-    #ffffff 0%, 
-    #f8fafc 30%, 
-    #e2e8f0 60%, 
-    #cbd5e1 100%);
-  box-shadow: 
-    0 0 20px rgba(255, 255, 255, 0.3),
-    0 0 40px rgba(255, 255, 255, 0.2),
-    0 0 60px rgba(255, 255, 255, 0.1);
-  animation: moon-glow 4s ease-in-out infinite;
-  z-index: 0;
-}
-
-.moon::before {
-  content: '';
-  position: absolute;
-  top: 15%;
-  left: 20%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(203, 213, 225, 0.6);
-  box-shadow: 
-    15px 10px 0 -2px rgba(203, 213, 225, 0.4),
-    -5px 20px 0 -3px rgba(203, 213, 225, 0.3);
-}
-
-@keyframes moon-glow {
-  0%, 100% {
-    box-shadow: 
-      0 0 20px rgba(255, 255, 255, 0.3),
-      0 0 40px rgba(255, 255, 255, 0.2),
-      0 0 60px rgba(255, 255, 255, 0.1);
-  }
-  50% {
-    box-shadow: 
-      0 0 30px rgba(255, 255, 255, 0.4),
-      0 0 60px rgba(255, 255, 255, 0.3),
-      0 0 90px rgba(255, 255, 255, 0.2);
-  }
-}
-
-/* 主题适配 - 月亮样式 */
-:global(.theme-dopamine) .moon {
-  background: radial-gradient(circle at 30% 30%, 
-    #fbbf24 0%, 
-    #f59e0b 30%, 
-    #d97706 60%, 
-    #b45309 100%);
-  box-shadow: 
-    0 0 20px rgba(251, 191, 36, 0.3),
-    0 0 40px rgba(251, 191, 36, 0.2),
-    0 0 60px rgba(251, 191, 36, 0.1);
-}
-
-:global(.theme-candy) .moon {
-  background: radial-gradient(circle at 30% 30%, 
-    #fce7f3 0%, 
-    #f9a8d4 30%, 
-    #f472b6 60%, 
-    #db2777 100%);
-  box-shadow: 
-    0 0 20px rgba(249, 168, 212, 0.3),
-    0 0 40px rgba(249, 168, 212, 0.2),
-    0 0 60px rgba(249, 168, 212, 0.1);
-}
-
-/* 响应式设计 - 月亮尺寸 */
-@media (max-width: 768px) {
-  .moon {
-    width: 60px;
-    height: 60px;
-    top: 10%;
-    right: 15%;
-  }
-}
-
-@media (max-width: 480px) {
-  .moon {
-    width: 40px;
-    height: 40px;
-    top: 8%;
-    right: 12%;
   }
 }
 </style>

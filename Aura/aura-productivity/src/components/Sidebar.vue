@@ -95,16 +95,15 @@
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import {
-  Notebook,
-  CheckSquare,
-  MessageCircle,
+import { 
+  Notebook, 
+  CheckSquare, 
+  MessageCircle, 
   Timer,
   Briefcase,
   Calendar,
   Clock,
   Droplets,
-  Music,
   type LucideIcon
 } from 'lucide-vue-next'
 
@@ -116,8 +115,8 @@ const mainRoutes = computed(() =>
   routes.filter(route => ['Notes', 'Todo', 'Projects'].includes(route.name as string))
 )
 
-const toolRoutes = computed(() =>
-  routes.filter(route => ['Chat', 'Pomodoro', 'Calendar', 'Alarm', 'WaterReminder', 'MusicPlayer'].includes(route.name as string))
+const toolRoutes = computed(() => 
+  routes.filter(route => ['Chat', 'Pomodoro', 'Calendar', 'Alarm', 'WaterReminder'].includes(route.name as string))
 )
 
 const isCollapsed = ref(false)
@@ -158,8 +157,7 @@ const iconMap: Record<string, LucideIcon> = {
   Briefcase,
   Calendar,
   Clock,
-  Droplets,
-  Music
+  Droplets
 }
 
 const getIcon = (iconName: string) => {

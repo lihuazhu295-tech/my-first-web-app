@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add vercel.json)",
+      "Bash(git commit -m \"更新Vercel配置文件，修复构建错误\")",
+      "Bash(git push origin main)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
